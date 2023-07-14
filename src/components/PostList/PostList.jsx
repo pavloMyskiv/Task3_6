@@ -19,10 +19,10 @@ export const PostList = () => {
   const handleAddPost = (data) => {
     const newPost = {
       userId: id,
-      id: postsList.length + 1,
-      title: data.title,
-      body: data.body,
+      id: Date.now(),
+      ...data,
     };
+    console.log(newPost);
     addPostMutation(newPost);
   };
   if (isLoading) {

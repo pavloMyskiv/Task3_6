@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './AddPostForm.css';
 import { useForm } from 'react-hook-form';
 
@@ -15,12 +15,9 @@ export const AddPostForm = (props) => {
   };
   const onSubmit = (data) => {
     props.handleAddPost(data);
+    reset({ title: '', body: '' });
   };
-  useEffect(() => {
-    if (formState.isSubmitSuccessful) {
-      reset({ title: '', body: '' });
-    }
-  }, [formState, reset]);
+
   return (
     <form
       className="post_add_form"
