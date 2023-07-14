@@ -22,7 +22,6 @@ export const PostList = () => {
       id: Date.now(),
       ...data,
     };
-    console.log(newPost);
     addPostMutation(newPost);
   };
   if (isLoading) {
